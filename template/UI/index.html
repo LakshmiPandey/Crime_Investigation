@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <link rel="stylesheet" href="{% static "css/indexstyle.css" %}">
+</head>
+<body>
+  <div id ="logo">
+    <img src="{% static "images/logo.png" %}">
+    <div class="navbar">Contact Us</div>
+    <div class="navbar">About</div>
+    <div class="navbar">Home</div>
+  </div>
+  <div id="header">
+    <img src="{% static "images/header.jpeg" %}">
+  </div>
+  <div id="intro">
+    <div id="introimg">
+      <img src="{% static "images/compvision.png" %}">
+    </div>
+    <div>
+      <span  style="text-align:center"><br><br>
+        <h1 style="font-size:2em;color:grey">COMPUTER VISION</h1><br>
+        <p style="font-size:1.5em;color:grey">Computer vision is an interdisciplinary field that deals with how computers can be made for gaining high-level understanding from digital images or videos. From the perspective of engineering, it seeks to automate tasks that the human visual system can do.</p><br>
+      </span><br>
+    </div>
+  </div>
+  <div id="apps">
+    <div id="app1">
+      <div class="discription">
+        <span  style="text-align:center;color:white"><br><br>
+          <h1 style="font-size:2em;">FACE SURVEILLANCE</h1><br>
+          <p style="font-size:1.5em;"> Criminal Surveillance detects criminal by matching suspected picture to the profile picture of criminals in its criminal record and suggest the respective one.</p><br>
+        </span><br>
+        <div class="appbutton">
+          <a href="{% url "UI:facesurveillance" %}"><input type="button" class="button" value="Detective Mode"></input></a>
+        </div>
+      </div>
+      <img src="{% static "images/facerec.gif" %}" class="appimg">
+    </div>
+    <div id="app2">
+      <img src="{% static "images/charrec.gif" %}" class="appimg">
+      <div class="discription">
+        <span  style="text-align:center;color:white"><br><br>
+          <h1 style="font-size:2em;">CHARACTER READER</h1><br>
+          <p style="font-size:1.5em;"> Character Reader detects criminal by converting capture image of number plate of vehicle into computer readable and get the information of vehicle from vehicles database and matching suspected handwriting to the handwriting of criminals in its criminal record and suggest the respective one.</p><br>
+        </span><br>
+        <div class="appbutton">
+          <input type="button" class="button" value="Detective Mode"></input>
+        </div>
+      </div>
+    </div>
+    <div id="app3">
+      <div class="discription">
+        <span  style="text-align:center;color:white"><br><br>
+          <h1 style="font-size:2em;">First Information Report</h1><br>
+          <p style="font-size:1.5em;">Any criminal activity around you and you want to terminate it,through this you can submit the criminal details of which you are witness.</p><br>
+        </span><br>
+        <div class="appbutton">
+          <input type="button" class="button" value="Detective Mode"></input>
+        </div>
+      </div>
+      <img src="{% static "images/fir.gif" %}" class="appimg">
+    </div>
+  </div>
+  <div id="technology">
+    <br><br>
+    <h1 style="font-size:2em;color:grey;text-align:center">TECHNOLOGY USED</h1><br><br><br>
+    <div class="techimg"><img src="{% static "images/ml.png" %}"></div>
+    <div class="techimg"><img src="{% static "images/python.png" %}"></div>
+    <div class="techimg"><img src="{% static "images/html.png" %}"></div>
+    <div class="techimg"><img src="{% static "images/css.png" %}"></div>
+    <div class="techimg"><img src="{% static "images/sql.png" %}"></div>
+  </div>
+  <br><br>
+  <div id="quote">
+    <span style="font-size:1.5em;color:maroon;text-align:center">"<span style="color:grey">Let me be clear - no one is above the law. Not a politician, not a priest, not a criminal, not a police officer. We are all accountable for our actions.</span>"</span>
+  </div>
+ <br><br>
+</body>
+</html>
