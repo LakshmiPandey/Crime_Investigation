@@ -7,27 +7,25 @@ eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 
 
 def take_sample():
+   
+   #  take the image input
    image = raw_input("enter the name of the image file: ")
-   gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-   img2 = detection(gray)
-   image_label, predicted_image = predict(img2)
+   
+   # function call to predict the image
+   image_label, predicted_image = predict(image)
    return image_label, predicted_image
 
 
-def detection( img1):
-   faces = face_cascade.detectMultiScale(img1, 1.3, 5)
-   for (x,y,w,h) in faces:
-        cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
-        roi_gray = gray[y:y+h, x:x+w]
-        roi_color = img[y:y+h, x:x+w]
-        eyes = eye_cascade.detectMultiScale(roi_gray)
-        for (ex,ey,ew,eh) in eyes:
-            img1 = cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
-            gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
-            new_image = cv2.resize(gray1, (0,0), fx = 1.5,  fy=1.5)
-            return(new_image)
+def detection( img):
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    face_cascade = cv2.CascadeClassifier('lbpcascade_frontalface.xml')
+    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5);
+    if (len(faces) == 0):
+        return None, None
+    (x, y, w, h) = faces[0]
+    return gray[y:y+w, x:x+h], faces[0]
 
-#training the model
+# training the model
 def prepare_training_data(data_folder_path):
     dirs = os.listdir(data_folder_path)
     faces = []
