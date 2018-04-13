@@ -1,11 +1,6 @@
 import cv2
 import numpy as np
 
-#face detection classifiers
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
-
-
 def take_sample():
    
    #  take the image input
@@ -18,6 +13,8 @@ def take_sample():
 
 def detection( img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+      
+    ## face classifier used here -----------------  
     face_cascade = cv2.CascadeClassifier('lbpcascade_frontalface.xml')
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5);
     if (len(faces) == 0):
