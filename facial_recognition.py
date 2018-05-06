@@ -1,4 +1,4 @@
-# importingthe libraries
+# importing  the libraries
 import os
 import cv2
 import numpy as np
@@ -17,7 +17,7 @@ def sample():
 # function to detect the face in the image
 def detection( img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
+      
     ## face classifier used here ----------------- is lbpcascade
     face_cascade = cv2.CascadeClassifier('lbpcascade_frontalface.xml')
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5);
@@ -25,6 +25,7 @@ def detection( img):
         return None, None
     (x, y, w, h) = faces[0]
     return gray[y:y+w, x:x+h], faces[0]
+
 
 '''function to draw rectangle on image
 according to given (x, y) coordinates and
@@ -55,13 +56,11 @@ def prepare_training_data(data_folder_path):
                 image_name_list.append(image_path)
                 labels.append(i)
                 i = i+1
-
     return faces, labels
 
 
 # function to predict the new face
 def predict(test_img):
-
     img = test_img.copy()
     face, rect = detection(img)
     label, confidence = face_recognizer.predict(face)
