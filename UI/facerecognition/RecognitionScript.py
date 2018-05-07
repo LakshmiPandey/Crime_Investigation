@@ -18,8 +18,6 @@ subjects = []
 
 # function to detect the face in the image
 def detection( img):
-    #image = cv2.imshow("here is image", img)
-    #cv2.waitKey(100)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     ## face classifier used here ----------------- is lbpcascade
     face_cascade = cv2.CascadeClassifier('lbpcascade_frontalface.xml')
@@ -47,12 +45,10 @@ def prepare_training_data(data_folder_path):
     for dir_name in dirs:
         i = i + 1
         subject_dir_path = os.path.join(data_folder_path, dir_name)
-        #subject_dir_path = data_folder_path + "/" + dir_name
         subjects.append(subject_dir_path)
         subject_images_names = os.listdir(subject_dir_path)
         for image_name in subject_images_names:
             image_path = os.path.join(subject_dir_path, image_name)
-            #image_path = subject_dir_path + "/" + image_name
             image = cv2.imread(image_path)
             cv2.imshow("Training on image...", cv2.resize(image, (400, 500)))
             cv2.waitKey(5)
@@ -60,8 +56,6 @@ def prepare_training_data(data_folder_path):
             if face is not None:
                 faces.append(face)
                 labels.append(i)
-
-
     return faces, labels
 
 
