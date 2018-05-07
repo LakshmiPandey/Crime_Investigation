@@ -5,19 +5,6 @@ import csv
 # Create your models here.
 
 def content_file_name1(instance, filename):
-    csvname = '%s.jpg' % (instance.id)
-    with open('UI/facerecognition/imagedatabase.csv',"r") as csvfile:
-        reader = csv.reader(csvfile,delimiter=' ')
-        data = list(reader)
-        row_count = int(len(data)/5)
-    with open('UI/facerecognition/imagedatabase.csv', 'a', newline='') as csvfile:
-        spamwriter = csv.writer(csvfile, delimiter=',',
-                                quotechar='|', quoting=csv.QUOTE_MINIMAL)
-        spamwriter.writerow([csvname+"-1",row_count])
-        spamwriter.writerow([csvname+"-2",row_count])
-        spamwriter.writerow([csvname+"-3",row_count])
-        spamwriter.writerow([csvname+"-4",row_count])
-        spamwriter.writerow([csvname+"-5",row_count])
     filename = '%s-1.jpg' % (instance.id)
     foldername = '%s' % (instance.id)
     return os.path.join('facedatabase/'+foldername,filename)
