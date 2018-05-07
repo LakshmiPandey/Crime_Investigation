@@ -2,12 +2,16 @@
 {% load staticfiles %}
 <html>
 <head>
+  <link rel="stylesheet" href="{% static "css/facesurveillancestyle.css" %}">
 </head>
 <body>
+  <h1 id="heading"> FACE SURVEILLANCE </h1><br><br>
+  <div id="form">
   <form method="post" enctype="multipart/form-data">
-  {{form.as_p}}
-  {% csrf_token %}
-  <input type="submit" value="Upload">
-</form>
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="Upload">
+  </form>
+</div>
 </body>
 </html>
