@@ -7,7 +7,7 @@ ________________________________________________________________________________
 here in the project :
 
 # objective 
-* TO detect the suspect.
+* To detect the suspect.
 * To recognise the person form the stored records of criminal.
 * Also to prepare the FIR report from any custom user.
 
@@ -31,7 +31,7 @@ ________________________________________________________________________________
  
  
  * This project has been completed via successful efforts of :
- # 1) Rajat singhal
+ * 1) Rajat singhal
     ( For Complete UI and database development)
- # 2) Lakshmi Pandey
+ * 2) Lakshmi Pandey
     ( for implementing detection & recognition technique )
