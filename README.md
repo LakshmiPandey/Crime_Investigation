@@ -1,5 +1,4 @@
 # Crime_Investigation
-
 Include detection of suspected person via face recognition technique.
 
 
